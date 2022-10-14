@@ -16,6 +16,24 @@ class Recursion
 		size <= 2 ? nums : fibs_rec(size-1, nums.push(nums[nums.length-1] + nums[nums.length-2]))
 	end
 
+	def merge_sort(arr, left_side = [], right_side = [])
+		left_side = left_side
+		right_side = right_side
+		if left_side > 2 && right_side > 2
+			
+			merge_sort(arr, left_side, right_side)
+		elsif left_side == 2 || left_side == 1 && right_side == 2 || right_side == 1
+			if left_side[left_side.length-2] > left_side[left_side.length-1]
+				a = left_side[left_side.length-1]
+				left_side[left_side.length-1] = left_side[left_side.length-2]
+				left_side[left_side.length-2] = a
+			end
+		else
+
+		end
+			
+	end
+
 end
 
 r = Recursion.new
