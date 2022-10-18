@@ -18,11 +18,11 @@ class Recursion
 
 	def merge_sort(arr, left_side = [], right_side = [])
 		
-		left_side = arr[0..arr.length/2 -1]
-		right_side = arr[arr.length/2 -1..arr.length-1]
-		if left_side.length/2 >= 0 || right_side.length/2 >= 0
-			merge_sort(arr[0..arr.length/2 -1], left_side, right_side)
-			merge_sort(arr[arr.length/2 -1..arr.length -1], left_side, right_side)
+		left_side = arr[0..(arr.length/2).ceil]
+		right_side = arr[(arr.length/2).ceil..arr.length-1]
+		if (left_side.length/2).ceil >= 0 || (right_side.length/2).ceil >= 0
+			merge_sort(arr[(0..arr.length/2).ceil], left_side, right_side)
+			merge_sort(arr[(arr.length/2).ceil..arr.length-1], left_side, right_side)
 		else 
 			if left_side.length == 2
 				if left_side[0] > left_side[1]
