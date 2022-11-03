@@ -16,6 +16,15 @@ class Recursion
 		size <= 2 ? nums : fibs_rec(size-1, nums.push(nums[nums.length-1] + nums[nums.length-2]))
 	end
 
+	def factorial(num)
+		fact_num = 1
+		until num == 1
+			fact_num *= num
+			num -= 1
+		end
+		fact_num
+	end
+
 	def merge_sort(arr, left_side = [], right_side = [])
 		
 		left_side = arr[0..(arr.length/2).ceil]
@@ -39,4 +48,4 @@ class Recursion
 end
 
 r = Recursion.new
-p r.fibs_rec(3)
+p r.factorial(8)
