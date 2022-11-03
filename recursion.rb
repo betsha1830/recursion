@@ -25,6 +25,14 @@ class Recursion
 		fact_num
 	end
 
+	def squ(num, expo)
+		if expo == 0
+			1
+		else
+			num * squ(num,expo-1)
+		end
+	end
+
 	def merge_sort(arr, left_side = [], right_side = [])
 		
 		left_side = arr[0..(arr.length/2).ceil]
@@ -48,4 +56,4 @@ class Recursion
 end
 
 r = Recursion.new
-p r.factorial(8)
+p r.squ(3,3)
